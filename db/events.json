@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Barefoot Country Music Fest",
+    "date": "6/19/20",
+    "time": "1:00 pm",
+    "timezone": "EDT",
+    "location": "Wildwood, NJ",
+    "description": "Music on the beach! Great food, beverages, and local crafts.",
+    "price": 79.0,
+    "imageUrl": "https://i1.wp.com/www.njarts.net/wp-content/uploads/2019/12/barefoot-main-336x232.jpg",
+    "category": "Music"
+  },
+  {
+    "name": "Peewee Football, Tigers vs. Falcons",
+    "date": "5/5/20",
+    "time": "7:00 pm",
+    "timezone": "CST",
+    "location": "Cookeville, TN",
+    "description": "Watch little kids run into each other",
+    "price": 0,
+    "imageUrl": "https://cdn.pixabay.com/photo/2017/05/18/14/54/youth-football-2323784_1280.jpg",
+    "Category": "youth football"
+  },
+  {
+    "name": "Houston Rockets at Golden State Warriors",
+    "date": "2/20/20",
+    "time": "7:30 PM",
+    "timezone": "PST",
+    "location": "San Francisco",
+    "description": "NBA Game between the Warriors and Rockets",
+    "price": 60,
+    "imageUrl": "https://www.nba.com/warriors/sites/warriors/files/20190614_oraclefinale_1280_0.jpg",
+    "category": "Sports"
+  },
+  {
+    "name": "Carnival",
+    "date": "04-10-2020",
+    "time": "12:00am",
+    "timezone": "PST",
+    "location": "123 grove st. Hollywood, CA 92212",
+    "description": "A hype party",
+    "price": 25,
+    "imageUrl": "https://www.trinijunglejuice.com/events/2020/soca-extreme-elements-of-carnival-2020.jpg",
+    "category": "Music"
+  }
+]

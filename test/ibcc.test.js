@@ -92,7 +92,9 @@ describe('DELETE /events/:name ', () => {
       .get('/events')
       .set('Accept', 'application/json')
       .end((err, res) => {
-        const deleteEvent = res.body.find(event => event.name === eventToDelete);
+        const deleteEvent = res.body.find(
+          event => event.name === eventToDelete
+        );
         expect(deleteEvent).to.equal(undefined);
         done();
       });

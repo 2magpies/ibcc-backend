@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // app.get('/', (req, res) => {
-//     res.redirect('/beers');
+//     res.redirect('/ibcc');
 // });
 
 app.use('/users', usersController);
@@ -20,5 +20,5 @@ app.use('/events', eventsController);
 app.set('port', process.env.PORT || 3001);
 
 app.listen(app.get('port'), () => {
-    console.log(`✅ PORT: ${app.get('port')} 🌟`);
+  console.log(`✅ PORT: ${app.get('port')} 🌟`);
 });

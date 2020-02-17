@@ -10,9 +10,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// app.get('/', (req, res) => {
-//     res.redirect('/ibcc');
-// });
+app.get('/', (req, res) => {
+  res.redirect('/ibcc');
+});
 
 app.use('/users', usersController);
 app.use('/events', eventsController);

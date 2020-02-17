@@ -8,7 +8,7 @@ const EventsSchema = new mongoose.Schema({
   location: String,
   description: String,
   price: Number,
-  imageURL: {
+  imageUrl: {
     type: String,
     default:
       'https://images.pexels.com/photos/1449795/pexels-photo-1449795.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'

@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.redirect('/ibcc');
+  res.redirect('/events');
 });
 
 app.use('/users', usersController);

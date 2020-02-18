@@ -21,13 +21,13 @@ describe('GET /events', () => {
 });
 
 // SHOW BY SPECIFIC
-describe('GET /events/:name', () => {
-  it('should return an event with a specific name', done => {
+describe('GET /events/:id', () => {
+  it('should return an event with a specific id', done => {
     api
-      .get('/events/Carnival')
+      .get('/events/5e4c5720b7301336e9620ab0')
       .set('Accept', 'application/json')
       .end((err, res) => {
-        expect(res.body).to.be.an('Array');
+        expect(res.body).to.have.property('name');
         done();
       });
   });
@@ -73,7 +73,7 @@ describe('DELETE /events/:name ', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         const events = res.body;
-        eventToDelete = events[events.length - 1].name;
+        eventToDelete = events[events.length - 1]._id;
         done();
       });
   });
@@ -92,9 +92,7 @@ describe('DELETE /events/:name ', () => {
       .get('/events')
       .set('Accept', 'application/json')
       .end((err, res) => {
-        const deleteEvent = res.body.find(
-          event => event.name === eventToDelete
-        );
+        const deleteEvent = res.body.find(event => event._id === eventToDelete);
         expect(deleteEvent).to.equal(undefined);
         done();
       });
@@ -102,7 +100,7 @@ describe('DELETE /events/:name ', () => {
 });
 
 // PUT
-describe('PUT /events/:name', () => {
+describe('PUT /events/:id', () => {
   let updateEvent = {
     name: 'TestEvent',
     time: '5:00pm'
@@ -110,15 +108,16 @@ describe('PUT /events/:name', () => {
 
   before(done => {
     api
-      .put(`/events/${updateEvent.name}`)
+      .put(`/events/${updateEvent._id}`)
       .set('Accept', 'application/json')
       .send(updateEvent)
       .end(done);
+    done();
   });
 
-  it('should update event by name', done => {
+  it('should update event by id', done => {
     api
-      .get(`/events/${updateEvent.name}`)
+      .get(`/events/${updateEvent.id}`)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.body.name).to.equal(updateEvent.name);
@@ -207,12 +206,12 @@ describe('DELETE /users/:_id', () => {
 describe('PUT /users/:name', () => {
   let updateUser = {
     name: 'Brendan',
-    email: 'bwilson@me.com'
+    email: 'Twilson3@me.com'
   };
 
   before(done => {
     api
-      .put(`/users/${updateUser.name}`)
+      .put(`/users/${updateUser._id}`)
       .set('Accept', 'application/json')
       .send(updateUser)
       .end(done);
@@ -220,10 +219,10 @@ describe('PUT /users/:name', () => {
 
   it('should update User by name', done => {
     api
-      .get(`/users/${updateUser.name}`)
+      .get(`/users/${updateUser._id}`)
       .set('Accept', 'application/json')
       .end((err, res) => {
-        expect(res.body.name).to.equal(updateUser.name);
+        expect(res.body._id).to.equal(updateUser._id);
       });
     done();
   });

@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 //VIEW
 router.get('/:id', (req, res) => {
-  Events.findById({ _id: req.params.id }).then(event => res.json(event));
+  Events.findById(req.params.id).then(event => res.json(event));
 });
 
 //CREATE

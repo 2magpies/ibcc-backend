@@ -181,7 +181,7 @@ describe('DELETE /users/:_id', () => {
       .set('Accept', 'application/json')
       .end((err, res) => {
         const users = res.body;
-        idToDelete = '5e4bfd737459756b50da0fc4';
+        idToDelete = users[users.length - 1].name;
         done();
       });
   });
@@ -195,7 +195,7 @@ describe('DELETE /users/:_id', () => {
   });
   it('should remove user from the array', done => {
     api
-      .get('/users/:_id')
+      .get('/users/:id')
       .set('Accept', 'application/json')
       .end((err, res) => {
         const deletedUser = res.body.find(user => user._id === idToDelete);

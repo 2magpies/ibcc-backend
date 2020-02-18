@@ -130,21 +130,77 @@ const api = supertest('http://localhost:3001');
 // User tests
 
 // Review user (GET)
-describe('GET /users/:name', () => {
-  it('should return a user with a specific name', done => {
-    api
-      .get('/users/Brendan')
-      .set('Accept', 'application/json')
-      .end((err, res) => {
-        expect(res.body).to.be.an('Array');
-        done();
-      });
-  });
-});
+// describe('GET /users/:name', () => {
+//   it('should return a user with a specific name', done => {
+//     api
+//       .get('/users/Brendan')
+//       .set('Accept', 'application/json')
+//       .end((err, res) => {
+//         expect(res.body).to.be.an('Array');
+//         done();
+//       });
+//   });
+// });
 
 // Create new user (POST)
+// describe('POST /users', () => {
+//   let newUser = {
+//     name: 'Tiffany',
+//     email: 'tiffhuddleston@gmail.com'
+//   };
 
+//   before(done => {
+//     api
+//       .post('/users')
+//       .set('Accept', 'application/json')
+//       .send(newUser)
+//       .end(done);
+//   });
+
+//   it('should add a new user to the collection and return it', done => {
+//     api
+//       .get('/users')
+//       .set('Accept', 'application/json')
+//       .end((err, res) => {
+//         const userToFind = res.body.find(user => user.name === newUser.name);
+//         expect(userToFind).to.be.an('object');
+//         done();
+//       });
+//   });
+// });
 
 // Update user (PUT)
 
 // Delete user (DELETE)
+describe('DELETE /users/:_id', () => {
+  let idToDelete;
+
+  before(done => {
+    api
+      .get('/users')
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        const users = res.body;
+        idToDelete = '5e4bfd737459756b50da0fc4';
+        done();
+      });
+  });
+
+  before(done => {
+    api
+      .delete(`/users/${idToDelete}`)
+      .set('Accept', 'application/json')
+      .end((err, res) => {});
+    done();
+  });
+  it('should remove user from the array', done => {
+    api
+      .get('/users/:_id')
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        const deletedUser = res.body.find(user => user._id === idToDelete);
+        expect(deletedUser).to.equal(undefined);
+      });
+    done();
+  });
+});

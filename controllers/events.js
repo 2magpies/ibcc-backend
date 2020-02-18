@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
 });
 
 //VIEW
-router.get('/:name', (req, res) => {
-  Events.find({ name: req.params.name }).then(event => res.json(event));
+router.get('/:id', (req, res) => {
+  Events.findById({ _id: req.params.id }).then(event => res.json(event));
 });
 
 //CREATE
@@ -19,16 +19,16 @@ router.post('/', (req, res) => {
 });
 
 //UPDATE
-router.put('/:name', (req, res) => {
+router.put('/:id', (req, res) => {
   let updatedEvents = req.body;
-  Events.findOneAndUpdate({ name: req.params.name }, updatedEvents, {
+  Events.findOneAndUpdate({ _id: req.params.id }, updatedEvents, {
     new: true
   }).then(event => res.json(event));
 });
 
 //DELETE
-router.delete('/:name', (req, res) => {
-  Events.findOneAndDelete({ name: req.params.name }).then(event =>
+router.delete('/:id', (req, res) => {
+  Events.findOneAndDelete({ _id: req.params.id }).then(event =>
     res.json(event)
   );
 });

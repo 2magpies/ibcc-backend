@@ -65,7 +65,7 @@ describe('POST /events', () => {
 });
 
 // DELETE
-describe('DELETE /events/:name ', () => {
+describe('DELETE /events/:id ', () => {
   let eventToDelete;
   before(done => {
     api
@@ -169,7 +169,7 @@ describe('POST /users', () => {
 });
 
 // Delete user (DELETE)
-describe('DELETE /users/:_id', () => {
+describe('DELETE /users/:id', () => {
   let idToDelete;
 
   before(done => {
@@ -203,7 +203,7 @@ describe('DELETE /users/:_id', () => {
 });
 
 // PUT USER
-describe('PUT /users/:name', () => {
+describe('PUT /users/:id', () => {
   let updateUser = {
     name: 'Brendan',
     email: 'Twilson3@me.com'
@@ -217,7 +217,7 @@ describe('PUT /users/:name', () => {
       .end(done);
   });
 
-  it('should update User by name', done => {
+  it('should update User by id', done => {
     api
       .get(`/users/${updateUser._id}`)
       .set('Accept', 'application/json')

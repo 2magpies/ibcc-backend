@@ -32,7 +32,7 @@ This is the backend for the GatherUp Application. Tested with Chai & supertest. 
 2. Do your best to keep the current coding style:
 
 - 2 spaces for indentation instead of tabs.
-- Reactjs conventional naming patterns.
+- Mongoose & MongoDB conventional naming patterns.
 
 3. Submit a pull request to this current repo with the following information:
 

@@ -1,11 +1,9 @@
+const cors = require('cors');
 const usersController = require('./controllers/users');
 const eventsController = require('./controllers/events');
-
 const express = require('express');
-const app = express();
-const cors = require('cors');
-
 app.use(cors());
+const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

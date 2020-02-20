@@ -18,6 +18,10 @@ This is the backend for the GatherUp Application. Tested with Chai & supertest. 
 - Supertest
 - Mocha/Chai
 
+## Model Schemas
+
+![IBCC Model Schema Diagram](https://i.imgur.com/w40TlSr.png)
+
 ## Getting Started/Installation Instructions
 
 1. Fork & clone ths repo.

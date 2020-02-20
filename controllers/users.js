@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   Users.find({}).then(user => res.json(user));
 });
 
-router.get('/:name', (req, res) => {
+router.get('/:id', (req, res) => {
   Users.find({ name: req.params.name }).then(user => res.json(user));
 });
 
@@ -15,14 +15,14 @@ router.post('/', (req, res) => {
   Users.create(newUsers).then(user => res.json(user));
 });
 
-router.put('/:name', (req, res) => {
+router.put('/:id', (req, res) => {
   let updatedUsers = req.body;
   Users.findOneAndUpdate({ name: req.params.name }, updatedUsers, {
     new: true
   }).then(user => res.json(user));
 });
 
-router.delete('/:name', (req, res) => {
+router.delete('/:id', (req, res) => {
   Users.findOneAndDelete({ name: req.params.name }).then(user =>
     res.json(user)
   );

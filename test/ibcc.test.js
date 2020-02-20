@@ -126,13 +126,15 @@ describe('PUT /events/:id', () => {
   });
 });
 
+
+
 // USER TESTS
 
 // Review user (GET)
 describe('GET /users/:id', () => {
   it('should return a user with a specific id', done => {
     api
-      .get('/users/Brendan')
+      .get('/users/5e4eba9ec18afc9f2df8e2cb')
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.body).to.be.an('Array');

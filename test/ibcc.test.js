@@ -129,8 +129,8 @@ describe('PUT /events/:id', () => {
 // USER TESTS
 
 // Review user (GET)
-describe('GET /users/:name', () => {
-  it('should return a user with a specific name', done => {
+describe('GET /users/:id', () => {
+  it('should return a user with a specific id', done => {
     api
       .get('/users/Brendan')
       .set('Accept', 'application/json')

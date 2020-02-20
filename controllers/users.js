@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Users.find({ name: req.params.name }).then(user => res.json(user));
+  Users.find({ _id: req.params.id }).then(user => res.json(user));
 });
 
 router.post('/', (req, res) => {
@@ -17,15 +17,13 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   let updatedUsers = req.body;
-  Users.findOneAndUpdate({ name: req.params.name }, updatedUsers, {
+  Users.findOneAndUpdate({ _id: req.params.id }, updatedUsers, {
     new: true
   }).then(user => res.json(user));
 });
 
 router.delete('/:id', (req, res) => {
-  Users.findOneAndDelete({ name: req.params.name }).then(user =>
-    res.json(user)
-  );
+  Users.findOneAndDelete({ _id: req.params.id }).then(user => res.json(user));
 });
 
 module.exports = router;

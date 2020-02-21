@@ -1,6 +1,12 @@
-#IBCC
-
 # IBCC API BACKEND
+
+### Users
+
+https://ibcc.herokuapp.com/users
+
+### Events
+
+https://ibcc.herokuapp.com/events
 
 ## Description
 
@@ -45,6 +51,16 @@ This is the backend for the GatherUp Application. Tested with Chai & supertest. 
 - An image of the app showing what functionality/ styling you added if the change or improvement was front-facing else a code snippet explaining your enhancement & why it's beneficial.
 
 4. Merges will happen upon approval.
+
+## Created By
+
+Brendan Wilson [Brendan's GitHub](https://github.com/bwilson19)
+
+Daphne Mintz [Daphne's GitHub](https://github.com/2magpies)
+
+Myshawne Stallings [Myshawne's GitHub](https://github.com/Mysta3)
+
+Tiffany Huddleston [Tiffany's GitHub](https://github.com/tiffhuddleston)
 
 ### References
 
